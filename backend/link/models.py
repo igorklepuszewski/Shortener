@@ -10,7 +10,8 @@ class Link(models.Model):
         long_url -> original url
         short_url -> shotened url
     '''
-    long_url = models.URLField(unique=True)
+
+    long_url = models.URLField()
     _short_hash = models.CharField(max_length=8, unique=True, blank=True)
 
     @property

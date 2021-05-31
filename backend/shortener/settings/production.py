@@ -1,8 +1,14 @@
-from .base import os
+from .base import *
+import os
 
-SECRET_KEY = os.environ['SECRET_KEY']
+SECRET_KEY = os.environ.get('SECRET_KEY', default='foo')
 
-DEBUG = False
+DEBUG = int(os.environ.get('DEBUG', default=0))
+
+ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+
+STATIC_ROOT = os.path.join(
+    os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'static')
 
 CORS_ORIGIN_ALLOW_ALL = False
 
@@ -18,5 +24,3 @@ DATABASES = {
         'PORT': 5432
     }
 }
-
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
