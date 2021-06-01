@@ -9,6 +9,18 @@
 
 Confidential keys have to be loaded as environment variables.
 
+
+## First run
+
+```
+$ docker-compose up -d db
+$ cd backend
+$ pipenv install --dev
+$ pipenv shell
+$ python manage.py createsuperuser
+$ python manage.py runserver
+```
+
 ## Development
 
 ### Database
@@ -31,8 +43,9 @@ $ python manage.py runserver
 ```
 $ docker-compose up -d --build
 ```
-
 ## Manage db
 
 ```
 $ docker exec -it <container_id> psql -U <database> -W <user>
+```
+
