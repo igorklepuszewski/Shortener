@@ -8,54 +8,55 @@
 
     <link
       href="{% static 'bootstrap/css/bootstrap.min.css' %}"
-      rel="stylesheet" type="text/css"
+      rel="stylesheet"
+      type="text/css"
     />
     <script>
-      if ( window.history.replaceState ) {
-          window.history.replaceState( null, null, window.location.href );
+      if (window.history.replaceState) {
+        window.history.replaceState(null, null, window.location.href);
       }
-  </script>
-  <style>
-    html body {
-  background-color: rgba(52, 69, 82, 255);
-}
+    </script>
+    <style>
+      html body {
+        background-color: rgba(52, 69, 82, 255);
+      }
 
-.container {
-  margin-top: 33vh;
-}
+      .container {
+        margin-top: 33vh;
+      }
 
-#input {
-  border-top-left-radius: 50px;
-  border-bottom-left-radius: 50px;
-  border-top-right-radius: 0px;
-  border-bottom-right-radius: 0px;
-  border-right: 0px;
-  margin-right: 0px;
-}
+      #input {
+        border-top-left-radius: 50px;
+        border-bottom-left-radius: 50px;
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 0px;
+        border-right: 0px;
+        margin-right: 0px;
+      }
 
-#output {
-  border-radius: 50px;
-}
+      #output {
+        border-radius: 50px;
+      }
 
-#button {
-  border-top-right-radius: 50px;
-  border-bottom-right-radius: 50px;
-  border-top-left-radius: 0px;
-  border-bottom-left-radius: 0px;
-  border-left: 0px;
-  margin-left: 0px;
-}
+      #button {
+        border-top-right-radius: 50px;
+        border-bottom-right-radius: 50px;
+        border-top-left-radius: 0px;
+        border-bottom-left-radius: 0px;
+        border-left: 0px;
+        margin-left: 0px;
+      }
 
-#no_left {
-  margin-left: 0px;
-  padding-left: 0px;
-}
+      #no_left {
+        margin-left: 0px;
+        padding-left: 0px;
+      }
 
-#no_right {
-  margin-right: 0px;
-  padding-right: 0px;
-}
-  </style>
+      #no_right {
+        margin-right: 0px;
+        padding-right: 0px;
+      }
+    </style>
   </head>
 
   <body>
@@ -64,17 +65,19 @@
     <script>
       function deselectAll() {
         var element = document.activeElement;
-        
+
         if (element && /INPUT|TEXTAREA/i.test(element.tagName)) {
-          if ('selectionStart' in element) {
+          if ("selectionStart" in element) {
             element.selectionEnd = element.selectionStart;
           }
           element.blur();
         }
 
-        if (window.getSelection) { // All browsers, except IE <=8
+        if (window.getSelection) {
+          // All browsers, except IE <=8
           window.getSelection().removeAllRanges();
-        } else if (document.selection) { // IE <=8
+        } else if (document.selection) {
+          // IE <=8
           document.selection.empty();
         }
       }
@@ -85,8 +88,6 @@
         document.execCommand("copy");
         deselectAll();
       }
-      </script>
+    </script>
   </body>
-
-
 </html>
